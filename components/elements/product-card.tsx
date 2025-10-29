@@ -1,11 +1,12 @@
 "use client";
 
 import { MouseEventHandler } from "react";
+import { Expand, ShoppingCart } from "lucide-react";
+import Image from "next/image";
+
 import useCart from "@/hooks/use-cart";
 import usePreviewModal from "@/hooks/use-preview-modal";
 import { Product } from "@/common/types";
-import { Expand, ShoppingCart } from "lucide-react";
-import Image from "next/image";
 
 import {
   Card,

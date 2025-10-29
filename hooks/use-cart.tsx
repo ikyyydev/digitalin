@@ -1,15 +1,9 @@
-import { Product } from "@/common/types";
-import {
-  CheckCircle,
-  FileWarning,
-  MarsStroke,
-  TriangleAlert,
-  WindArrowDownIcon,
-} from "lucide-react";
+import { CheckCircle, TriangleAlert } from "lucide-react";
 import { toast } from "sonner";
-
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
+
+import { Product } from "@/common/types";
 
 interface CartStore {
   items: Product[];

@@ -1,5 +1,6 @@
 import getProduct from "@/actions/get-product";
 import getProducts from "@/actions/get-products";
+
 import Gallery from "@/components/elements/gallery";
 import InfoProduct from "@/components/elements/info-product";
 import Container from "@/components/layouts/container";

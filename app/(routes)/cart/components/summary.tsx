@@ -1,11 +1,12 @@
 "use client";
 
 import axios from "axios";
-import useCart from "@/hooks/use-cart";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
+import useCart from "@/hooks/use-cart";
 import { toast } from "sonner";
+
 import Currency from "@/components/ui/currency";
 import Button from "@/components/ui/button";
 

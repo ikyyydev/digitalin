@@ -1,11 +1,13 @@
 "use client";
 
-import { cn } from "@/common/lib/utils";
-import { Color, Size } from "@/common/types";
-import Button from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import { useRouter, useSearchParams } from "next/navigation";
 import queryString from "query-string";
+
+import { cn } from "@/common/lib/utils";
+import { Color, Size } from "@/common/types";
+
+import Button from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 interface FilterProps {
   data: (Size | Color)[];

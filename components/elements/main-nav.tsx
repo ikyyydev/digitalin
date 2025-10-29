@@ -1,9 +1,10 @@
 "use client";
 
-import { cn } from "@/common/lib/utils";
-import { Category } from "@/common/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
+import { cn } from "@/common/lib/utils";
+import { Category } from "@/common/types";
 
 interface MainNavProps {
   data: Category[];

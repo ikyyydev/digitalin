@@ -4,6 +4,7 @@ import { forwardRef } from "react";
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ({ className, children, disabled, type = "button", ...props }, ref) => {
     return (
       <button

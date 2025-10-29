@@ -1,8 +1,9 @@
 "use client";
 
+import { Filter as FilterIcon } from "lucide-react";
+
 import { Color, Size } from "@/common/types";
 
-import { Filter as FilterIcon } from "lucide-react";
 import Filter from "./filter";
 import {
   Sheet,

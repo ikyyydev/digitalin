@@ -1,10 +1,11 @@
 "use client";
 
-import Container from "@/components/layouts/container";
+import { useEffect, useState } from "react";
 import useCart from "@/hooks/use-cart";
+
+import Container from "@/components/layouts/container";
 import CartItem from "./components/cart-item";
 import Summary from "./components/summary";
-import { useEffect, useState } from "react";
 
 const CartPage = () => {
   const [isMounted, setIsMounted] = useState(false);

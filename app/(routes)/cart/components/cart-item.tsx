@@ -1,10 +1,12 @@
 "use client";
 
-import { Product } from "@/common/types";
-import Currency from "@/components/ui/currency";
-import useCart from "@/hooks/use-cart";
-import { X } from "lucide-react";
 import Image from "next/image";
+import { X } from "lucide-react";
+import useCart from "@/hooks/use-cart";
+
+import { Product } from "@/common/types";
+
+import Currency from "@/components/ui/currency";
 
 interface CartItemProps {
   data: Product;
