@@ -8,6 +8,19 @@
     "start": "next start",
     "lint": "eslint"
   },
+  "license": "MIT",
+  "author": "Rifki Jaya Afandi",
+  "repository": "https://github.com/ikyyydev/digitalin",
+  "bugs": "https://github.com/ikyyydev/digitalin/issues",
+  "homepage": "https://digitalin.vercel.app",
+  "description": "Digitalin Store",
+  "keywords": [
+    "digitalin",
+    "store",
+    "digitalin store",
+    "digital store",
+    "digital store indonesia"
+  ],
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-separator": "^1.1.7",
