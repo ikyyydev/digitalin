@@ -3,9 +3,9 @@
 import { CheckCircle, XCircle } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
+import Link from "next/link";
 
 import useCart from "@/hooks/use-cart";
-import Link from "next/link";
 import Container from "@/components/layouts/container";
 
 const SuccessPage = () => {
@@ -15,14 +15,12 @@ const SuccessPage = () => {
   const isSuccess = searchParams.get("success") === "true";
   const isCanceled = searchParams.get("canceled") === "true";
 
-  // Hanya kosongkan keranjang jika sukses
   useEffect(() => {
     if (isSuccess) {
       removeAll();
     }
   }, [isSuccess, removeAll]);
 
-  // Jika tidak ada parameter (misal, user mengakses langsung), kita bisa redirect atau tampilkan pesan default
   if (!isSuccess && !isCanceled) {
     return (
       <Container>
