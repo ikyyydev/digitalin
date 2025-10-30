@@ -20,6 +20,7 @@ const GalleryTab: React.FC<GalleryTabProps> = ({ image }) => {
         src={image.url}
         alt="Thumbnail"
         className="object-contain object-center"
+        priority
       />
     </TabsTrigger>
   );
