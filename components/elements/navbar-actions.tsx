@@ -28,7 +28,7 @@ const NavbarActions = () => {
     >
       <div className="relative">
         <ShoppingBag size={16} color="black" />
-        <span className="absolute -top-1 -right-1 bg-black text-white text-xs font-bold rounded-full h-4 w-4 flex items-center justify-center">
+        <span className="absolute -top-2 -right-2 bg-black text-white text-xs font-bold rounded-full h-4 w-4 flex items-center justify-center">
           {cart.items.length}
         </span>
       </div>

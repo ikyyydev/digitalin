@@ -4,13 +4,14 @@ import { useRouter, useSearchParams } from "next/navigation";
 import queryString from "query-string";
 
 import { cn } from "@/common/lib/utils";
-import { Color, Size } from "@/common/types";
+import { Color, Storage } from "@/common/types";
 
 import Button from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { useTransition } from "react";
 
 interface FilterProps {
-  data: (Size | Color)[];
+  data: (Color | Storage)[];
   name: string;
   valueKey: string;
 }
@@ -18,6 +19,8 @@ interface FilterProps {
 const Filter: React.FC<FilterProps> = ({ data, name, valueKey }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
+
+  const [isPending, startTransition] = useTransition();
 
   const selectedValue = searchParams.get(valueKey);
 
@@ -35,14 +38,17 @@ const Filter: React.FC<FilterProps> = ({ data, name, valueKey }) => {
 
     const url = queryString.stringifyUrl(
       {
-        url: window.location.href,
+        url: window.location.pathname,
         query,
       },
       { skipNull: true }
     );
 
-    router.push(url);
+    startTransition(() => {
+      router.push(url);
+    });
   };
+
   return (
     <div className="mb-8">
       <h3 className="text-lg font-semibold">{name}</h3>
@@ -54,12 +60,24 @@ const Filter: React.FC<FilterProps> = ({ data, name, valueKey }) => {
           <div key={filter.id} className="flex items-center">
             <Button
               className={cn(
-                "rounded-md text-sm text-gray-800 p-2 bg-white border border-gray-300",
-                selectedValue === filter.id && "bg-black text-white"
+                "rounded-md text-sm text-gray-800 p-2 bg-white border border-gray-300 flex gap-1",
+                selectedValue === filter.id && "border-primary"
               )}
               onClick={() => onClick(filter.id)}
+              disabled={isPending}
             >
-              {filter.name}
+              {valueKey === "colorId" ? (
+                <>
+                  <div
+                    className="w-6 h-6 rounded-md border"
+                    style={{ backgroundColor: filter.value }}
+                    title={filter.name}
+                  />
+                  {filter.name}
+                </>
+              ) : (
+                filter.name || filter.value
+              )}
             </Button>
           </div>
         ))}

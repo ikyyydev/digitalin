@@ -30,6 +30,7 @@ const HomePage = async () => {
               title="Featured Products"
               description="Discover our most popular and trending items"
               items={products}
+              totalFeatured={8}
             />
           </div>
         </Container>

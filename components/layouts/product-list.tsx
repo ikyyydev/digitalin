@@ -6,12 +6,14 @@ interface ProductListProps {
   title: string;
   description?: string;
   items: Product[];
+  totalFeatured?: number;
 }
 
 const ProductList: React.FC<ProductListProps> = ({
   title,
   description,
   items,
+  totalFeatured,
 }) => {
   return (
     <div>
@@ -19,7 +21,7 @@ const ProductList: React.FC<ProductListProps> = ({
       <p className="text-lg text-slate-700 mb-8">{description}</p>
       {items.length === 0 && <NoResult />}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        {items.map((item) => (
+        {items.splice(0, totalFeatured).map((item) => (
           <ProductCard key={item.id} data={item} />
         ))}
       </div>

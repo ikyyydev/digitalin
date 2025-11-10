@@ -2,7 +2,13 @@
 
 import { usePathname } from "next/navigation";
 import { Category } from "@/common/types";
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "../ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetTitle,
+  SheetTrigger,
+} from "../ui/sheet";
 import Link from "next/link";
 import { cn } from "@/common/lib/utils";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -41,7 +47,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ data }) => {
                 route.active ? "text-black" : "text-neutral-500"
               )}
             >
-              {route.label}
+              <SheetDescription>{route.label}</SheetDescription>
               <IoIosArrowForward size={20} />
             </Link>
           ))}
