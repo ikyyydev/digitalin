@@ -35,10 +35,15 @@ const InfoProduct: React.FC<InfoProductProps> = ({ data }) => {
         </div>
         <div className="flex items-center gap-x-4">
           <h3 className="font-semibold text-black">Color:</h3>
-          <div
-            className="h-6 w-6 rounded-full border"
-            style={{ backgroundColor: data?.color?.value }}
-          />
+          {data?.colors?.map((color) => (
+            <div
+              key={color.id}
+              className="h-6 w-6 rounded-full border"
+              style={{
+                backgroundColor: color.name,
+              }}
+            />
+          ))}
         </div>
       </div>
       <div className="mt-10 flex items-center gap-x-3">
