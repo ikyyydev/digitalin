@@ -4,6 +4,7 @@ import Link from "next/link";
 import Container from "@/components/layouts/container";
 import MainNav from "./main-nav";
 import NavbarActions from "./navbar-actions";
+import MobileNav from "./mobile-nav";
 
 export const revalidate = 0;
 
@@ -19,7 +20,10 @@ const Navbar = async () => {
 
           <MainNav data={categories} />
 
-          <NavbarActions />
+          <div className="ml-auto flex">
+            <NavbarActions />
+            <MobileNav data={categories} />
+          </div>
         </div>
       </Container>
     </div>

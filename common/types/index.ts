@@ -8,6 +8,7 @@ export interface Category {
   id: string;
   name: string;
   billboard: Billboard;
+  products: Product[];
 }
 
 export interface Product {
@@ -17,7 +18,7 @@ export interface Product {
   price: string;
   isFeatured: boolean;
   size: Size;
-  color: Color;
+  colors: Color;
   images: Image[];
 }
 
@@ -35,5 +36,10 @@ export interface Size {
 export interface Color {
   id: string;
   name: string;
+  value: string;
+}
+
+export interface Storage {
+  id: string;
   value: string;
 }

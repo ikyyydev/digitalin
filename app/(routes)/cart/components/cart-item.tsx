@@ -7,6 +7,7 @@ import useCart from "@/hooks/use-cart";
 import { Product } from "@/common/types";
 
 import Currency from "@/components/ui/currency";
+import Button from "@/components/ui/button";
 
 interface CartItemProps {
   data: Product;
@@ -17,6 +18,10 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
 
   const onRemove = () => {
     cart.removeItem(data.id);
+  };
+
+  const dataColor = () => {
+    console.log(data);
   };
   return (
     <li className="flex py-6 border-b">
@@ -40,10 +45,11 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
         <div className="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
           <div className="flex justify-between">
             <p className="text-lg font-semibold text-black">{data.name}</p>
+            <Button onClick={dataColor}>Klik</Button>
           </div>
 
           <div className="mt-1 flex text-sm">
-            <p className="text-gray-500">{data.color.name}</p>
+            <p className="text-gray-500">{data?.colors?.name}</p>
             <p className="text-gray-500 ml-4 border-l border-gray-200 pl-4">
               {data.size.name}
             </p>

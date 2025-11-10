@@ -22,17 +22,17 @@ const NavbarActions = () => {
   }
 
   return (
-    <div className="ml-auto flex items-center gap-x-4">
-      <Button
-        onClick={() => router.push("/cart")}
-        className="flex items-center rounded-full bg-black px-4 py-2"
-      >
-        <ShoppingBag size={20} color="white" />
-        <span className="ml-2 text-sm font-medium text-white">
+    <Button
+      onClick={() => router.push("/cart")}
+      className="aspect-square flex items-center rounded-full p-2 relative bg-transparent cursor-pointer"
+    >
+      <div className="relative">
+        <ShoppingBag size={16} color="black" />
+        <span className="absolute -top-1 -right-1 bg-black text-white text-xs font-bold rounded-full h-4 w-4 flex items-center justify-center">
           {cart.items.length}
         </span>
-      </Button>
-    </div>
+      </div>
+    </Button>
   );
 };
 
